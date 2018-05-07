@@ -3,13 +3,12 @@ $(document).ready(function(){
         $(this).toggleClass("checked");    
     });
 
-    $("span").click(function(event){
-        $(this).parent().fadeOut(400,function()
-        {
-            $(this).remove();
-        })
-        event.stopPropagation();
-    });
+    $("ul").on("click", "span", function(event){
+	$(this).parent().fadeOut(500,function(){
+		$(this).remove();
+	});
+	event.stopPropagation();
+	});
 
     $("input[type='text']").keypress(function(event){
         if(event.which === 13){
